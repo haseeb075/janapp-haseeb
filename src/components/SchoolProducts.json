@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "pencil",
+    "price": "10",
+    "description": "perfect for those who can't remember"
+  },
+  {
+    "id": "2",
+    "name": "pencil",
+    "price": "10",
+    "description": "hahahahhahahaha.........kill me"
+  },
+  {
+    "id": "3",
+    "name": "rubber",
+    "price": "3",
+    "description": "why so serious"
+  }
+]
