@@ -13,7 +13,7 @@ import Header from "./components/Header";
 
 // import Joke from "./components/Joke";
 // import JokesData from "./components/jokesData";
-import Product from "./components/Product";
+// import Product from "./components/Product";
 // import Productdata from "./components/SchoolProducts.json";
 import StateComponent from "./components/StateComponent";
 // Mosh
