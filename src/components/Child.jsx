@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 
-
 //child component
 function NewParent(props) {
 
@@ -12,13 +11,13 @@ const [value , setValue] = useState(props.value);
 //     fontWeight: '10px'
 // }
 
-const itemArray=["item1", "item2", "item3"]
+// const itemArray=["item1", "item2", "item3"]
 
 // functions in javascript are objects so that they have properties and methods
 // const formatCount =() =>{
     
 // cater the id of props
-console.log(props.id);
+// console.log(props.id);
   
 // } 
 
@@ -46,17 +45,23 @@ console.log(props.id);
           Press it
         </button>
 
-{/* Delete Button */}
-        <div
+{/*Aashir Delete Button */}
+        {/* <div
           data-id={props.id}
           className='btn btn-danger'
-          //event .target.vale
+          //event .target.valeype=-
           onClick={(e) => props.onDelete(e.target.dataset.id)}
 
         
         >
           Delete
-        </div>
+        </div> */}
+{/* Mosh Delete Button */}
+{console.log("props.id-------", props.id)}
+{/* We don't hve id property in props object thats why we are changing the props.onDelete  */}
+{/* <button type="button" onClick={()=> props.onDelete(props.id) } className="btn btn-danger m-2">Delete</button> */}
+ 
+
 
         {/* <button onClick={formatCount()}></button> */}
 
@@ -69,13 +74,13 @@ console.log(props.id);
                     ))}
                 </ul>} */}
         {/* 2nd method of conditional rendering using && operator*/}
-        {itemArray.length !== 0 && (
+        {/* {itemArray.length !== 0 && (
           <ul>
             {itemArray.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        )}
+        )} */}
       </div>
     );
 }
