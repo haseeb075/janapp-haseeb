@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 function NewParent(props) {
 
 // const [count, setCount] = useState(0);
-const [value , setValue] = useState(props.value);
+const [value , setValue] = useState(props.counter.value);
 // const [dvalue, setDvalue] = useState(props.onDelete);
 // const userStyles={
 //     color: "red", 
@@ -34,7 +34,7 @@ const [value , setValue] = useState(props.value);
         >
           {value}{" "}
         </span>
-{/* Press it Button */}
+        {/* Press it Button */}
 
         <button
           className='btn btn-secondary'
@@ -45,7 +45,7 @@ const [value , setValue] = useState(props.value);
           Press it
         </button>
 
-{/*Aashir Delete Button */}
+        {/*Aashir Delete Button */}
         {/* <div
           data-id={props.id}
           className='btn btn-danger'
@@ -56,13 +56,12 @@ const [value , setValue] = useState(props.value);
         >
           Delete
         </div> */}
-{/* Mosh Delete Button */}
-{console.log("props.id-------", props.id)}
-{/* We don't hve id property in props object thats why we are changing the props.onDelete  */}
-{/* <button type="button" onClick={()=> props.onDelete(props.id) } className="btn btn-danger m-2">Delete</button> */}
- 
-
-
+        {/* Mosh Delete Button */}
+        {console.log("props.id-------", props.id)}
+        {/* We don't hve id property in props object thats why we are changing the props.onDelete  */}
+        {/* <button type="button" onClick={()=> props.onDelete(props.id) } className="btn btn-danger m-2">Delete</button> */}
+        <button type="button" onClick={()=> props.onDelete(props.counter.id) } className="btn btn-danger m-2">Delete</button>
+        <button type="button" className="btn btn-secondary" onClick={()=> props.onReset(props.counter.id)}>Reset</button>
         {/* <button onClick={formatCount()}></button> */}
 
         {/* One method of conditional rendering using if-else statement */}

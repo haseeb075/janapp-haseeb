@@ -12,7 +12,11 @@ function Parent(props) {
     ]
 
     // I am taking my counter into usestate hook so that I can update my state
+    //for Delete
     const [counter, setCounter] = useState([...counters])
+
+    //for Reset
+    const [reset, setReset] = useState([...counters])
 
 
     // onDelete event called on onDelete
@@ -27,6 +31,15 @@ function Parent(props) {
         // console.log(filteredCounter);
         // console.log('====================================');
         };
+      
+        //onReset event called on onReset
+        const handleReset = () => {
+        const resetcounter =  reset.map(c => {
+            c.value = 0;
+            return c;
+          } )
+          
+        }
 
     // This callback function takes a value and passed as parameter
     // Receiving argument as a parameter
@@ -76,6 +89,8 @@ function Parent(props) {
                onDelete={(value) => handleDelete(value)}
               // value={counter.value}
                //value is passed as a seperate prop, both of these are the properties of counter object 
+
+               onReset={(value) => handleReset(value)}
               selected={counter.selected}
 
               //The whole point of using object is to encapsulte related values
