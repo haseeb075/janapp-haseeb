@@ -6,16 +6,16 @@ function Parent(props) {
 
     const counters =[
         {id: 1, value: 4 }, 
-        {id: 2, value: 0},
-        {id: 3, value: 0},
-        {id: 4, value: 0},
+        {id: 2, value: 3},
+        {id: 3, value: 2},
+        {id: 4, value: 1},
     ]
 
     // I am taking my counter into usestate hook so that I can update my state
-    //for Delete
+    //for Delete btn
     const [counter, setCounter] = useState([...counters])
 
-    //for Reset
+    //for Reset btn
     const [reset, setReset] = useState([...counters])
 
 
@@ -32,13 +32,32 @@ function Parent(props) {
         // console.log('====================================');
         };
       
-        //onReset event called on onReset
+        //onReset event called on onReset attribute
         const handleReset = () => {
+          // map each value of counter as (reset) and reset it's value to 0
         const resetcounter =  reset.map(c => {
             c.value = 0;
             return c;
-          } )
+          });
+          setReset(resetcounter);
+          console.log("resetcounter------------------>>>", resetcounter);
+        };
+        
+        // handleIncrement event called on onIncrement attribute
+
+        const handleIncrement=(count) => {
+       
+          // so we are updating the first counter array element so instead we have to find index of 
+          // counter that we received by using indexOf
           
+          const newcounters = [...counter]
+          const index = newcounters.indexOf(count);
+          newcounters[index] = { ...count };
+          newcounters[index].value++;
+          setCounter({ newcounters });
+          
+          console.log(newcounters);
+        
         }
 
     // This callback function takes a value and passed as parameter
@@ -74,7 +93,7 @@ function Parent(props) {
         {/* {isLoggedIn && <button>Logout</button>} */}
         {/* Explaaination : if left side is true then print right side */}
 
-        {/* counter */}
+        {/* Child component will be eported frm parent */}
         {counter &&
           counter.map((counter, i) => (
             <Child
@@ -85,7 +104,10 @@ function Parent(props) {
             //id is passed as a seperate prop, both of these are the properties of counter object
             // id={counter.id} 
           
-              // onDelete pa function laga rha hn jo k as a prop jai ga after call back that function... Taking value as an argument
+            //onIncrement attribute having a function which should be passed as a prop takes the value as an argument
+              onIncrement={(value) => handleIncrement(value)}
+            
+            // onDelete attribute pa function laga rha hn jo k as a prop jai ga after call back that function... Taking value as an argument
                onDelete={(value) => handleDelete(value)}
               // value={counter.value}
                //value is passed as a seperate prop, both of these are the properties of counter object 
