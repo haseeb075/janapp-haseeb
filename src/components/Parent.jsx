@@ -13,7 +13,7 @@ function Parent(props) {
 
     // I am taking my counter into usestate hook so that I can update my state
     //for Delete btn
-    const [counter, setCounter] = useState([...counters])
+    const [counter, setCounter] = useState(counters)
 
     //for Reset btn
     const [reset, setReset] = useState([...counters])
@@ -45,21 +45,6 @@ function Parent(props) {
         
         // handleIncrement event called on onIncrement attribute
 
-        const handleIncrement=(count) => {
-       
-          // so we are updating the first counter array element so instead we have to find index of 
-          // counter that we received by using indexOf
-          
-          const newcounters = [...counter]
-          const index = newcounters.indexOf(count);
-          newcounters[index] = { ...count };
-          newcounters[index].value++;
-          setCounter({ newcounters });
-          
-          console.log(newcounters);
-        
-        }
-
     // This callback function takes a value and passed as parameter
     // Receiving argument as a parameter
     // const deleteCounter= (index) =>{
@@ -87,6 +72,26 @@ function Parent(props) {
     //     }  
 
     // }    
+
+
+
+
+        const handleIncrement = (id) => {
+          let newCounter = counter;
+
+          const store = newCounter.filter(count => count.id === id);
+           store[0].value++;
+            // newCounter = store[0].value++
+
+            newCounter = [...newCounter, store[0]]
+
+            setCounter(newCounter);
+          console.log(newCounter);
+          //1- input : object ki value
+          
+          
+
+        };
     return (
       <div>
         {/* code snippet for && operator(type of check) */}

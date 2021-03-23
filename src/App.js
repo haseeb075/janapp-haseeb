@@ -1,11 +1,11 @@
-import "./App.css";
+// import "./App.css";
 
 // importing images
 // import { lemon } from "../src/assets/images/lemon.jpeg";
 
 //importing components
 // import StartReact from "../src/components/startreact";
-import Header from "./components/Header";
+import Home from "./pages/WebsiteHome";
 // import Main from "./components/MainContent";
 // import Footer from "./components/Footer";
 // import TodoItem from "./components/TodoItem";
@@ -15,12 +15,18 @@ import Header from "./components/Header";
 // import JokesData from "./components/jokesData";
 // import Product from "./components/Product";
 // import Productdata from "./components/SchoolProducts.json";
-import StateComponent from "./components/StateComponent";
+// import StateComponent from "./components/StateComponent";
 // Mosh
 // import FebComponent from "./components/Febcomponent";
-import Parent from "./components/Parent";
+// import Parent from "./components/Parent";
 
 //* json coming from jokesData that will be passed 1in map function
+
+
+// styles
+import '../src/global/styles/general.css'
+
+
 function App(props) {
   // const Jokescomponent = () =>
   //   JokesData.map((joke) => (
@@ -45,16 +51,19 @@ function App(props) {
   // console.log("skooldata", schoolData);
   return (
     <div className='App'>
-      <Header />
+      <Home />
       {/* Props component */}
       {/* to display product's data, component must be wrapped in a function */}
       {/* <Data array={Productdata} /> */}
 
-      {/* State Component */}
-      <StateComponent />
+      {/* State Component  Running Code*/}
+
+      {/* <StateComponent /> */}
+      
       {/* <Main /> */}
       {/* <FebComponent /> */}
-      <Parent/>
+      {/* Parent Component Running Code*/}
+      {/* <Parent/> */}
       {/* <Start React /> */}
       {/* <TodoItem /> */}
 
