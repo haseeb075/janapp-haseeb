@@ -16,21 +16,20 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 export default function WebsiteHome(props) {
     return (
-        <React.Fragment>
-                <Header />
-                {/* <HomeMain> */}
-                <Router>
-                <Route path='/' component={Home}>
-                </Route>    
+      <React.Fragment>
+        <Header />
+        <div>
+          <Router>
+            <Switch>
+              <Route path='/' exact component={Home}></Route>
 
-                <Route path='/about' component={About}>
-                </Route>    
+              <Route path='/about' component={About}></Route>
 
-                <Route path='/contact' component={Contact}>
-                </Route>    
-                {/* <HomeMain/> */}
-                </Router>
-                <Footer />      
+              <Route path='/contact' component={Contact}></Route>
+            </Switch>
+          </Router>
+          <Footer />
+        </div>
       </React.Fragment>
     );
 }
