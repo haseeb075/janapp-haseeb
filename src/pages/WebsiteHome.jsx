@@ -2,7 +2,7 @@ import React from 'react';
 
 //components
 import Header from "../components/StaticComponents/Header"
-import HomeMain from "../components/ReusableComponents/HomeMain";
+// import HomeMain from "../components/ReusableComponents/HomeMain";
 import Footer from '../components/StaticComponents/Footer'
 
 // pages
@@ -21,11 +21,11 @@ export default function WebsiteHome(props) {
         <div>
           <Router>
             <Switch>
-              <Route path='/' exact component={Home}></Route>
+              <Route path='/' exact children={<Home/>}></Route>
 
-              <Route path='/about' component={About}></Route>
+              <Route path='/about' component={ <About/> }></Route>
 
-              <Route path='/contact' component={Contact}></Route>
+              <Route path='/contact' component={<Contact/> }></Route>
             </Switch>
           </Router>
           <Footer />

@@ -5,7 +5,7 @@
 
 //importing components
 // import StartReact from "../src/components/startreact";
-import Home from "./pages/WebsiteHome";
+import WebsiteHome from "./pages/WebsiteHome";
 // import Main from "./components/MainContent";
 // import Footer from "./components/Footer";
 // import TodoItem from "./components/TodoItem";
@@ -22,6 +22,8 @@ import Home from "./pages/WebsiteHome";
 
 //* json coming from jokesData that will be passed 1in map function
 
+// Routes
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 // styles
 import '../src/global/styles/general.css'
@@ -51,7 +53,17 @@ function App(props) {
   // console.log("skooldata", schoolData);
   return (
     <div className='App'>
-      <Home />
+      
+{/* All Routes */}
+    <Router>
+      <div className='App'>
+        <Header/>
+
+        
+      </div>
+    </Router>
+
+
       {/* Props component */}
       {/* to display product's data, component must be wrapped in a function */}
       {/* <Data array={Productdata} /> */}
