@@ -5,7 +5,7 @@
 
 //importing components
 // import StartReact from "../src/components/startreact";
-import WebsiteHome from "./pages/WebsiteHome";
+// import WebsiteHome from "./pages/WebsiteHome";
 // import Main from "./components/MainContent";
 // import Footer from "./components/Footer";
 // import TodoItem from "./components/TodoItem";
@@ -22,8 +22,8 @@ import WebsiteHome from "./pages/WebsiteHome";
 
 //* json coming from jokesData that will be passed 1in map function
 
-// Routes
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Header from '../src/components/StaticComponents/Header'
+import About from '../src/pages/About'
 
 // styles
 import '../src/global/styles/general.css'
@@ -55,13 +55,13 @@ function App(props) {
     <div className='App'>
       
 {/* All Routes */}
-    <Router>
-      <div className='App'>
+    
+      <div>
         <Header/>
+        <About />
 
-        
       </div>
-    </Router>
+ 
 
 
       {/* Props component */}
