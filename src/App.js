@@ -5,7 +5,7 @@ import "./App.css";
 
 //importing components
 // import StartReact from "../src/components/startreact";
-import Header from "./components/Header";
+import Header from "./components/StaticComponents/Header";
 // import Main from "./components/MainContent";
 // import Footer from "./components/Footer";
 // import TodoItem from "./components/TodoItem";
@@ -46,15 +46,16 @@ function App(props) {
   return (
     <div className='App'>
       <Header />
+
       {/* Props component */}
       {/* to display product's data, component must be wrapped in a function */}
       {/* <Data array={Productdata} /> */}
 
       {/* State Component */}
-      <StateComponent />
+      {/* <StateComponent /> */}
       {/* <Main /> */}
       {/* <FebComponent /> */}
-      <Parent/>
+      {/* <Parent/> */}
       {/* <Start React /> */}
       {/* <TodoItem /> */}
 
