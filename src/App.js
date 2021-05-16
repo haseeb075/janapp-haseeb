@@ -23,10 +23,14 @@
 //* json coming from jokesData that will be passed 1in map function
 
 import Header from '../src/components/StaticComponents/Header'
-import About from '../src/pages/About'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
 // styles
 import '../src/global/styles/general.css'
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
 function App(props) {
@@ -53,15 +57,21 @@ function App(props) {
   // console.log("skooldata", schoolData);
   return (
     <div className='App'>
-      
-{/* All Routes */}
-    
-      <div>
-        <Header/>
-        <About />
 
-      </div>
- 
+      {/* All Routes */}
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+
+            <Route path='/' exact component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/contact' component={Contact} />
+          </Switch>
+
+
+        </div>
+      </Router>
 
 
       {/* Props component */}
@@ -71,7 +81,7 @@ function App(props) {
       {/* State Component  Running Code*/}
 
       {/* <StateComponent /> */}
-      
+
       {/* <Main /> */}
       {/* <FebComponent /> */}
       {/* Parent Component Running Code*/}
