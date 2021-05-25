@@ -2,12 +2,7 @@ import React from 'react';
 
 function BookTable(props) {
 
-    const tables= [
-        {    
-            "tableNo" : 
-
-        }
-    ]
+ 
         
     
     return (

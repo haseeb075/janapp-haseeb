@@ -17,20 +17,16 @@ function About() {
         
         console.log(items);
         setItems(items.data.name)
+         
+           Object.values(items.data).map((item) => {
+             console.log("item>>>>>>>>>>>>",item);
+           });
+         
     }
     return (
-        <div className="">
-
-            {
-                items.map((item) => (
-                    <div key={item.itemid}>
-
-                        <h1>{item.data.name}</h1>
-                    </div>
-                ))
-            }
-
-        </div>
+      <div>
+        {/* {Object.keys(items).map(item => {console.log(item)}) } */}
+      </div>
     );
 }
 
