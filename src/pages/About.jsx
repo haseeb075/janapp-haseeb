@@ -7,7 +7,7 @@ function About() {
      fetchItems();
  }, [])
 
- const [items , setItems] = useState([]);
+ const [item , setItem] = useState([]);
 
 
 //  function to fetch api
@@ -16,11 +16,11 @@ function About() {
         const items = await data.json()
         
         console.log(items);
-        setItems(items.data.name)
+        setItem(items.data.name)
          
-           Object.values(items.data).map((item) => {
-             console.log("item>>>>>>>>>>>>",item);
-           });
+           Object.values(items.data).map((item) => (
+             console.log("item>>>>>>>>>>>>",item)
+           ));
          
     }
     return (

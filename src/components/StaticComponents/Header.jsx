@@ -23,6 +23,9 @@ function Header(props) {
               <li>Contact</li>
               </Link>
                 
+              <Link to=''>
+                <li>Tables</li>
+              </Link>
               
             </ul>
           </div>

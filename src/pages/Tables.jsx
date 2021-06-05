@@ -1,4 +1,5 @@
 import React from 'react';
+import BookTable from '../pages/BookTable'
 
 function Tables(props) {
     return (

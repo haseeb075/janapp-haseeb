@@ -26,6 +26,8 @@ import Header from '../src/components/StaticComponents/Header'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import AddContact from './components/AddContact'
+import ContactList from './components/ContactList'
 
 // styles
 import '../src/global/styles/general.css'
@@ -67,6 +69,8 @@ function App(props) {
             <Route path='/' exact component={Home} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
+            <Route path='/addcontact' component={AddContact}/>
+            <Route path='/contactlist' component={ContactList}/> 
           </Switch>
 
 
