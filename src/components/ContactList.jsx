@@ -1,19 +1,32 @@
-import React from 'react';
+import React, {useEffect} from "react";
+import { FaBeer } from "react-icons/fa";
+
 
 function ContactList(props) {
-    const allUsers = props;
+  const allUsers = props;
 
-console.log('====================================');
-console.log(allUsers);
-console.log('====================================');
+  console.log("====================================");
+  console.log("contactlist>>>>",allUsers);
+  console.log("====================================");
 
-    // const renderContactList = props.allUsers
-    
-    return (
-        <div>
-             
-        </div>
-    );
+
+  useEffect(()=>{
+    console.log('====================================');
+    // console.log("useEffect>>>>",allUsers);
+    console.log('====================================');
+// allUsers.contacts.map((contact) => console.log(contact));
+
+  },[])
+
+  
+
+
+
+
+
+
+  
+  return <div className=''>{}</div>;
 }
 
 export default ContactList;

@@ -59,24 +59,33 @@ function App(props) {
   // console.log("skooldata", schoolData);
   return (
     <div className='App'>
-
       {/* All Routes */}
       <Router>
         <div>
           <Header />
           <Switch>
-
             <Route path='/' exact component={Home} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
-            <Route path='/addcontact' component={AddContact}/>
-            <Route path='/contactlist' component={ContactList}/> 
+            <Route
+              path='/addcontact'
+              component={(props) => <AddContact {...props} />}
+            />
+            {/* <Route
+              path='/contactlist'
+              component={ContactList}
+              render={(props) => <ContactList {...props} />}
+            /> */}
+
+            <Route
+              path='/contactlist'
+              component={(props) => (
+                <ContactList contacts={allUsers} {...props} />
+              )}
+            />
           </Switch>
-
-
         </div>
       </Router>
-
 
       {/* Props component */}
       {/* to display product's data, component must be wrapped in a function */}
