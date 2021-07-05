@@ -19,12 +19,15 @@ function Header(props) {
               <li>About</li>
               </Link>
               
-              <Link to='/contact'>
-              <li>Contact</li>
+              <Link to='/addcontact'>
+              <li>Add Contact</li>
               </Link>
                 
-              <Link to=''>
-                <li>Tables</li>
+              <Link to='/allcontact'>
+                <li>All Contact</li>
+              </Link>
+              <Link to='/usestatehook'>
+                <li>UseState Hook</li>
               </Link>
               
             </ul>

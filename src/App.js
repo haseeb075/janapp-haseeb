@@ -25,10 +25,18 @@
 import Header from '../src/components/StaticComponents/Header'
 import Home from './pages/Home'
 import About from './pages/About'
-import Contact from './pages/Contact'
-import AddContact from './components/AddContact'
-import ContactList from './components/ContactList'
 
+import AddContact from './components/AddContact'
+import AllContacts from './components/AllContacts'
+
+import AddItem from './components/Items/AddItem'
+import TotalItem from './components/Items/TotalItem'
+
+// Learning Components
+// useState
+import UseStateHook from './components/Learning/UseStateHook'
+import useStateHook2 from './components/Learning/useStateHook2'
+import UseStateHook3 from './components/Learning/UseStateHook3'
 // styles
 import '../src/global/styles/general.css'
 
@@ -66,23 +74,37 @@ function App(props) {
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/about' component={About} />
-            <Route path='/contact' component={Contact} />
-            <Route
-              path='/addcontact'
-              component={(props) => <AddContact {...props} />}
-            />
-            {/* <Route
-              path='/contactlist'
-              component={ContactList}
-              render={(props) => <ContactList {...props} />}
-            /> */}
+             {/* "Props" in this case refers to props of React Router. Not to be confused with general props term.*/}
+             
+             
+             {/* <Route path='/contact' render={(props) => <Contact hello="Hello, " {...props} />} /> */}
 
             <Route
-              path='/contactlist'
-              component={(props) => (
-                <ContactList contacts={allUsers} {...props} />
-              )}
+              path='/addcontact'
+              exact
+              {...props}
+              component= {AddContact}
             />
+            
+            <Route
+              path='/contactlist'
+              {...props}
+              component={AllContacts}
+            
+            />
+
+              {/* Parent Component Renders on console & the browser and should be included in route*/}
+            <Route path='/additem' component={AddItem} />
+
+              {/* Child Component also renders in console but we never use them in routes or anyotherway to show them in browser*/}
+            {/* <Route path= '/totalitem' component={TotalItem}/> */}
+
+
+            {/* Learning Components */}
+            <Route path='/usestatehook' component={UseStateHook}/>
+            <Route path='/usestatehook2' component={useStateHook2}/>
+            <Route path='/usestatehook3' component={UseStateHook3}/>
+
           </Switch>
         </div>
       </Router>

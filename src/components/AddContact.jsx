@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactList from "./ContactList";
+import AllContacts from "../components/AllContacts";
 
 
 function AddContact(props) {
@@ -19,10 +19,11 @@ var listOfContacts = {
 
 let allUsers = [];
 
-for (var key in listOfContacts){
-    allUsers.push(listOfContacts[key])
+for (var element in listOfContacts)
+{
+    allUsers.push(listOfContacts[element])
 }
-console.log("allUsers>>>>>>>>>>>>>>>>",allUsers);
+console.log("allUsers from Addcontact",allUsers);
     
 
     return (
@@ -38,8 +39,12 @@ console.log("allUsers>>>>>>>>>>>>>>>>",allUsers);
           </div>
           <button className='btn btn-primary'>Add</button>
         </form>
+        {/* {allUsers.map((user)=> <div>{user}</div> )} */}
 
-        <ContactList contacts={allUsers} />
+        <AllContacts contacts={allUsers} 
+           
+        />
+    
       </div>
     );
 }
