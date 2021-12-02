@@ -1,11 +1,14 @@
 import "./App.css";
+import Backdrop from "./components/maxi_millian/Backdrop";
+import Modal from "./components/maxi_millian/Modal";
+
 
 // importing images
 // import { lemon } from "../src/assets/images/lemon.jpeg";
 
 //importing components
 // import StartReact from "../src/components/startreact";
-import Header from "./components/StaticComponents/Header";
+// import Header from "./components/StaticComponents/Header";
 // import Main from "./components/MainContent";
 // import Footer from "./components/Footer";
 // import TodoItem from "./components/TodoItem";
@@ -13,12 +16,15 @@ import Header from "./components/StaticComponents/Header";
 
 // import Joke from "./components/Joke";
 // import JokesData from "./components/jokesData";
-import Product from "./components/Product";
+// import Product from "./components/Product";
 // import Productdata from "./components/SchoolProducts.json";
-import StateComponent from "./components/StateComponent";
+// import StateComponent from "./components/StateComponent";
 // Mosh
 // import FebComponent from "./components/Febcomponent";
-import Parent from "./components/Parent";
+// import Parent from "./components/Parent";
+
+// Maximillian
+import Todos from "./components/maxi_millian/Todos";
 
 //* json coming from jokesData that will be passed 1in map function
 function App(props) {
@@ -45,8 +51,13 @@ function App(props) {
   // console.log("skooldata", schoolData);
   return (
     <div className='App'>
-      <Header />
+      {/* <Header /> */}
+      <Todos text='Learn React'/>
+      <Todos text='Master React'/>
+      <Todos text='Explore the full React Course'/>
 
+      <Modal />
+      <Backdrop />
       {/* Props component */}
       {/* to display product's data, component must be wrapped in a function */}
       {/* <Data array={Productdata} /> */}
