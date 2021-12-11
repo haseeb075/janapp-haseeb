@@ -1,7 +1,5 @@
-import "./App.css";
-import Backdrop from "./components/maxi_millian/Backdrop";
-import Modal from "./components/maxi_millian/Modal";
-
+import { Route } from 'react-router-dom'
+import 
 
 // importing images
 // import { lemon } from "../src/assets/images/lemon.jpeg";
@@ -56,8 +54,7 @@ function App(props) {
       <Todos text='Master React'/>
       <Todos text='Explore the full React Course'/>
 
-      <Modal />
-      <Backdrop />
+   
       {/* Props component */}
       {/* to display product's data, component must be wrapped in a function */}
       {/* <Data array={Productdata} /> */}

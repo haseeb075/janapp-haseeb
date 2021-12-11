@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, ButtonGroup, Box, Container } from "@chakra-ui/react";
+import Backdrop from "./Backdrop";
+import Modal from "./Modal";
 
 export default function Todos(props) {
 
+ const [modalisOpen, setModalisOpen] = useState(false);
+
+
 function handleDelete(){
-  console.log("Clicked !!!");
+  // console.log("Clicked !!!");
+  setModalisOpen(true)
+}
+
+function CloseModalHandler(){
+  setModalisOpen(false)
 }
 
   return (
@@ -17,6 +27,14 @@ function handleDelete(){
             <Button colorScheme="blue" onClick={handleDelete}>Delete</Button>
           </div>
         </Box>
+        {/* 1 way */}
+        {/* {modalisOpen ? <Modal/> : null  } */}
+        
+        {/* 2 way */}
+        {modalisOpen && <Modal onCancel={CloseModalHandler} onConfirm={CloseModalHandler} />}
+        {modalisOpen && <Backdrop onCancel={CloseModalHandler}/>}
+        {/* <Modal /> */} 
+      {/* <Backdrop /> */}
       </Container>
     </div>
   );
