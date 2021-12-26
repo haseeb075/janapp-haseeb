@@ -1,5 +1,8 @@
-import { Route } from 'react-router-dom'
-import 
+import { Routes, Route } from "react-router-dom";
+// Routing
+import AllMeetups from "./pages/AllMeetups.js";
+import NewMeetup from "./pages/NewMeetup.js";
+import Favourites from "./pages/Favourites.js";
 
 // importing images
 // import { lemon } from "../src/assets/images/lemon.jpeg";
@@ -22,7 +25,9 @@ import
 // import Parent from "./components/Parent";
 
 // Maximillian
+
 import Todos from "./components/maxi_millian/Todos";
+import MainNavigation from "./components/layout/MainNavigation";
 
 //* json coming from jokesData that will be passed 1in map function
 function App(props) {
@@ -48,13 +53,22 @@ function App(props) {
   // const schoolData = Productdata.map((product) => <Product id={product} />);
   // console.log("skooldata", schoolData);
   return (
-    <div className='App'>
+    <div className="App">
+      {/* Maximillian Routing*/}
+      {/* localhost:3000/favourites */}
+      {/* mypage.com/favourites */}
+      <MainNavigation />
+      <Routes>
+        <Route path="/" element={<AllMeetups />} />
+        <Route path="/newmeetup" element={<NewMeetup />} />
+        <Route path="/favourites" element={<Favourites />} />
+      </Routes>
       {/* <Header /> */}
-      <Todos text='Learn React'/>
+      {/* Maximillian Basic React */}
+      {/* <Todos text='Learn React'/>
       <Todos text='Master React'/>
-      <Todos text='Explore the full React Course'/>
+      <Todos text='Explore the full React Course'/> */}
 
-   
       {/* Props component */}
       {/* to display product's data, component must be wrapped in a function */}
       {/* <Data array={Productdata} /> */}
